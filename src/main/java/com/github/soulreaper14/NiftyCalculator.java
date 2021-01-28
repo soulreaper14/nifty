@@ -2,6 +2,9 @@ package com.github.soulreaper14;
 
 import java.awt.BorderLayout;
 import java.awt.FlowLayout;
+import java.awt.Image;
+import java.awt.Toolkit;
+import java.net.URL;
 import java.text.DecimalFormat;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
@@ -22,6 +25,10 @@ public class NiftyCalculator {
     }
 
     JFrame frame = new JFrame("Nifty");
+
+    URL url = frame.getClass().getResource("/images/calculator.png");
+    Image image = Toolkit.getDefaultToolkit().getImage(url);
+    frame.setIconImage(image);
 
     // components for the input and output
     JLabel inputLabel = new JLabel("Input");
