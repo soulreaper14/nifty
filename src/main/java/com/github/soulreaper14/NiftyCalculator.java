@@ -1,6 +1,7 @@
 package com.github.soulreaper14;
 
 import java.awt.BorderLayout;
+import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.awt.Image;
 import java.awt.Toolkit;
@@ -77,9 +78,16 @@ public class NiftyCalculator {
     frame.setLayout(new BorderLayout());
     frame.add(topPanel, BorderLayout.NORTH);
     frame.add(centerPanel, BorderLayout.CENTER);
-
     frame.pack();
+    Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
+    int w = frame.getWidth();
+    int h = frame.getHeight();
+    int x = (screenSize.width - w) / 2;
+    int y = (screenSize.height - h) / 2;
+
+    frame.setLocation(x, y);
     frame.setVisible(true);
+
   }
 
   private static double convert(String conversion, double input) {
